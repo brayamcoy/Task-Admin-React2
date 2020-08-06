@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700|Nunito:600");
+* {
+  box-sizing: border-box;
+  font-family: Cinzel Decorative, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body,
+html {
+  background: linear-gradient(to bottom right, #024, #402);
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2em 0em;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 20px;
+  padding: 0% 5%;
+  width: 85%;
+}
+
+.types {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: chocolate;
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.filters {
+  margin-bottom: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-container {
+  border-radius: 20px;
+  border: 1px solid #ffdd56;
+  margin-bottom: 1em;
+  background: none;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2em 0 2em;
+}
+
+.Poison {
+  background-color: darkgreen;
+}
+
+.Grass {
+  background-color: greenyellow;
+}
+
+.Fire {
+  background-color: red;
+}
+
+.Flying {
+  background-color: aqua;
+  color: #000;
+}
+
+.Water {
+  background-color: blue;
+}
+
+.filters select {
+  background: transparent;
+  border-radius: 20px;
+  padding: 1em;
+  color: #fff;
+}
+select option {
+  background: #024;
+  color: #fff;
+}
+
+/*Search bar*/
+
+.search-container {
+  width: 490px;
+  display: block;
+  margin: 0 auto;
+}
+
+input#search-bar {
+  margin: 0 auto;
+  background: transparent;
+  color: #fff;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid #ffdd56;
+  outline: none;
+}
+
+.title-container {
+  border-radius: 20px;
+  border: 1px solid #ffdd566c;
+  margin-bottom: 1em;
+  padding: 0 1rem;
 }
