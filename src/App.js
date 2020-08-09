@@ -420,11 +420,11 @@ function App() {
   const [typeSelected, setTypeSelected] = useState("All");
   const [nameFilter, setnameFilter] = useState("");
 
-  const handleTypeSelect = event => {
+  const handleTypeSelect = (event) => {
     setTypeSelected(event.target.value);
   };
 
-  const handleFilter = event => {
+  const handleFilter = (event) => {
     setnameFilter(event.target.value);
   };
 
@@ -453,35 +453,37 @@ function App() {
         </form>
       </div>
       <div className="App">
-        {/* Si el tipo de pokemon seleccionado tiene un valor igual a "Todos" entonces regresaré todos los pokemones que tenga el arreglo */
-        /* Si no regresaré todos los pokemones que incluyan el valor del tipo de pokemon seleccionado  */
-        pokemons
-          .filter(pokemon => {
-            return typeSelected === "All"
-              ? true
-              : pokemon.type.includes(typeSelected);
-          })
-          .filter(pokemon => {
-            return pokemon.name.english === ""
-              ? true
-              : pokemon.name.english
-                  .toLocaleLowerCase()
-                  .includes(nameFilter.toLocaleLowerCase());
-          })
-          .map(pokemon => {
-            return (
-              <Card
-                name={pokemon.name.english}
-                image={pokemon.sprite}
-                base={pokemon.base}
-                types={pokemon.type}
-              />
-            );
-          })}
+        {
+          /* Si el tipo de pokemon seleccionado tiene un valor igual a "Todos" entonces regresaré todos los pokemones que tenga el arreglo */
+          /* Si no regresaré todos los pokemones que incluyan el valor del tipo de pokemon seleccionado  */
+          pokemons
+            .filter((pokemon) => {
+              return typeSelected === "All"
+                ? true
+                : pokemon.type.includes(typeSelected);
+            })
+            .filter((pokemon) => {
+              return pokemon.name.english === ""
+                ? true
+                : pokemon.name.english
+                    .toLocaleLowerCase()
+                    .includes(nameFilter.toLocaleLowerCase());
+            })
+            .map((pokemon) => {
+              return (
+                <Card
+                  key={pokemon.id}
+                  name={pokemon.name.english}
+                  image={pokemon.sprite}
+                  base={pokemon.base}
+                  types={pokemon.type}
+                />
+              );
+            })
+        }
       </div>
     </div>
   );
 }
 
 export default App;
-

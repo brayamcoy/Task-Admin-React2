@@ -107,6 +107,23 @@ input#search-bar {
   border-radius: 20px;
   border: 1px solid #ffdd56;
   outline: none;
+  &:focus {
+    border: 1px solid #008abf;
+    transition: 0.35s ease;
+    color: #008abf;
+    &::-webkit-input-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0;
+    }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0;
+    }
+    &:-ms-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0;
+    }
+  }
 }
 
 .title-container {
@@ -114,4 +131,15 @@ input#search-bar {
   border: 1px solid #ffdd566c;
   margin-bottom: 1em;
   padding: 0 1rem;
+}
+
+ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.margin-bar {
+  margin-left: 20px;
 }
